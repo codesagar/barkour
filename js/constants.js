@@ -1,0 +1,29 @@
+// Legacy constants - now using CONFIG
+// This file is kept for backwards compatibility
+// All new code should use CONFIG instead
+
+const CONSTANTS = {
+    // Canvas dimensions
+    CANVAS_WIDTH: CONFIG.CANVAS.WIDTH,
+    CANVAS_HEIGHT: CONFIG.CANVAS.HEIGHT,
+
+    // Physics
+    GRAVITY: CONFIG.PHYSICS.GRAVITY,
+    JUMP_VELOCITY: CONFIG.PHYSICS.JUMP_VELOCITY,
+    MAX_FALL_SPEED: CONFIG.PHYSICS.MAX_FALL_SPEED,
+
+    // Character
+    CHARACTER_WIDTH: CONFIG.CHARACTER.WIDTH,
+    CHARACTER_HEIGHT: CONFIG.CHARACTER.HEIGHT,
+    CHARACTER_X: CONFIG.CHARACTER.X_POSITION,
+
+    // Ground position
+    GROUND_Y: CONFIG.GROUND.Y_POSITION,
+    GROUND_HEIGHT: CONFIG.GROUND.HEIGHT,
+
+    // Score
+    SCORE_INCREMENT: CONFIG.SCORE.INCREMENT_PER_FRAME,
+
+    // Color palette
+    COLORS: CONFIG.COLORS
+};

@@ -1,0 +1,27 @@
+<svg width="40" height="80" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+  <!-- Mario-style Green Pipe matching the screenshot -->
+
+  <!-- Pipe top rim/cap (wider than body) - black outline -->
+  <rect x="0" y="0" width="40" height="12" fill="#000000"/>
+
+  <!-- Rim fill - bright green -->
+  <rect x="2" y="2" width="36" height="8" fill="#7CFC00"/>
+
+  <!-- Rim inner shadow -->
+  <rect x="4" y="8" width="32" height="2" fill="#228B22"/>
+
+  <!-- Main pipe body - black outline -->
+  <rect x="4" y="12" width="32" height="68" fill="#000000"/>
+
+  <!-- Pipe body left side (highlight) -->
+  <rect x="6" y="14" width="12" height="64" fill="#7CFC00"/>
+
+  <!-- Pipe body middle -->
+  <rect x="18" y="14" width="8" height="64" fill="#32CD32"/>
+
+  <!-- Pipe body right side (shadow) -->
+  <rect x="26" y="14" width="8" height="64" fill="#228B22"/>
+
+  <!-- Small highlight stripe on left -->
+  <rect x="8" y="14" width="2" height="64" fill="#ADFF2F"/>
+</svg>
