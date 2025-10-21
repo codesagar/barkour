@@ -1,8 +1,29 @@
-# Mobile Controls Guide
+# Mobile & Mouse Controls Guide
 
-Barkour is now fully optimized for mobile devices! Here's how to play on your phone or tablet:
+Barkour is now fully optimized for mobile devices and mouse input! Here's how to play on any device:
 
-## 📱 Touch Controls
+## 🖱️ Mouse Controls (Desktop)
+
+### Character Selection Screen
+- **Click Left Side**: Select previous character
+- **Click Right Side**: Select next character
+- **Click Center**: Confirm selection and proceed
+
+### Speed Selection Screen
+- **Click Top**: Select previous (slower) speed
+- **Click Bottom**: Select next (faster) speed
+- **Click Center**: Confirm and start game
+
+### During Gameplay
+- **Click Anywhere**: Jump (same as pressing spacebar)
+
+### Game Over Screen
+- **Click Upper Area**: Restart game with same character/speed
+- **Click Lower Area**: Return to character selection
+
+---
+
+## 📱 Touch Controls (Mobile)
 
 ### Character Selection Screen
 - **Tap Left Side**: Select previous character

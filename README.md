@@ -27,6 +27,14 @@ A browser-based endless runner game inspired by Chrome's T-Rex game, featuring c
 - **Enter**: Confirm selection
 - **C**: Return to character selection (from Game Over screen)
 
+#### Desktop (Mouse)
+- **Click Left/Right Side**: Navigate character selection
+- **Click Top/Bottom**: Navigate speed selection
+- **Click Center**: Confirm selection and start
+- **Click Anywhere**: Jump during gameplay
+- **Click Upper Area**: Restart game (on Game Over)
+- **Click Lower Area**: Return to menu (on Game Over)
+
 #### Mobile (Touch)
 - **Tap/Swipe Left-Right**: Navigate character selection
 - **Tap/Swipe Up-Down**: Navigate speed selection

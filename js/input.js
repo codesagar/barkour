@@ -20,6 +20,9 @@ class InputHandler {
         canvas.addEventListener('touchmove', (e) => this.handleTouchMove(e), { passive: false });
         canvas.addEventListener('touchend', (e) => this.handleTouchEnd(e), { passive: false });
 
+        // Bind mouse click event listeners
+        canvas.addEventListener('click', (e) => this.handleClick(e));
+
         // Also listen on document to catch taps outside canvas
         document.addEventListener('touchstart', (e) => {
             // Prevent default to avoid scrolling, zooming, etc.
@@ -227,6 +230,59 @@ class InputHandler {
             this.game.restart();
         } else {
             this.game.returnToCharacterSelection();
+        }
+    }
+
+    // Mouse click handler (works like touch taps)
+    handleClick(event) {
+        const canvas = document.getElementById('gameCanvas');
+        const rect = canvas.getBoundingClientRect();
+        const clickX = event.clientX;
+        const clickY = event.clientY;
+        const relativeX = clickX - rect.left;
+        const relativeY = clickY - rect.top;
+        const canvasWidth = rect.width;
+        const canvasHeight = rect.height;
+
+        // Handle based on game state
+        switch(this.game.state) {
+            case 'START':
+                // Click on left/right side to navigate, center to select
+                if (relativeX < canvasWidth * 0.33) {
+                    this.game.selectPreviousCharacter();
+                } else if (relativeX > canvasWidth * 0.67) {
+                    this.game.selectNextCharacter();
+                } else {
+                    // Center click to proceed
+                    this.game.proceedToSpeedSelection();
+                }
+                break;
+
+            case 'SELECT_SPEED':
+                // Click on top/bottom to navigate, center to select
+                if (relativeY < canvasHeight * 0.33) {
+                    this.game.selectPreviousSpeed();
+                } else if (relativeY > canvasHeight * 0.67) {
+                    this.game.selectNextSpeed();
+                } else {
+                    // Center click to start game
+                    this.game.startGame();
+                }
+                break;
+
+            case 'PLAYING':
+                // Any click during gameplay = jump
+                this.game.character.jump();
+                break;
+
+            case 'GAME_OVER':
+                // Click on top half = restart, bottom half = return to character selection
+                if (relativeY < canvasHeight * 0.6) {
+                    this.game.restart();
+                } else {
+                    this.game.returnToCharacterSelection();
+                }
+                break;
         }
     }
 }
