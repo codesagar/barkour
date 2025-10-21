@@ -12,6 +12,17 @@ body {
     align-items: center;
     min-height: 100vh;
     overflow: hidden;
+    /* Mobile optimizations */
+    touch-action: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    /* Prevent pull-to-refresh and overscroll */
+    overscroll-behavior: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
 }
 
 .game-container {
@@ -35,6 +46,11 @@ body {
     max-height: 90vh;
     width: auto;
     height: auto;
+
+    /* Mobile touch optimizations */
+    touch-action: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .screen {
@@ -71,8 +87,10 @@ body {
 /* Responsive design */
 @media (max-width: 900px) {
     #gameCanvas {
-        max-width: 90vw;
+        max-width: 95vw;
+        max-height: 80vh;
         height: auto;
+        border: 2px solid #333;
     }
 
     #loadingScreen h1 {
@@ -81,5 +99,29 @@ body {
 
     #loadingScreen p {
         font-size: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    #gameCanvas {
+        max-width: 98vw;
+        max-height: 70vh;
+        border: 2px solid #333;
+    }
+
+    #loadingScreen h1 {
+        font-size: 24px;
+    }
+
+    #loadingScreen p {
+        font-size: 10px;
+    }
+}
+
+/* Landscape mobile orientation */
+@media (max-width: 900px) and (orientation: landscape) {
+    #gameCanvas {
+        max-width: 95vw;
+        max-height: 90vh;
     }
 }

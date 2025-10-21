@@ -8,7 +8,9 @@ A browser-based endless runner game inspired by Chrome's T-Rex game, featuring c
 - **T-Rex Game Mechanics**: Authentic jump physics and difficulty progression
 - **Mario-Inspired Theme**: Classic pixel art style with Mario color palette
 - **High Score Tracking**: Persistent high scores using localStorage
-- **Responsive Controls**: Simple spacebar controls for instant playability
+- **Responsive Controls**: Keyboard and touch controls for desktop and mobile
+- **Mobile Optimized**: Full touch support with swipe and tap gestures
+- **Cross-Platform**: Works on desktop browsers and mobile devices
 
 ## How to Play
 
@@ -19,10 +21,21 @@ A browser-based endless runner game inspired by Chrome's T-Rex game, featuring c
 
 ### Controls
 
-- **Arrow Keys**: Navigate character selection (left/right)
+#### Desktop (Keyboard)
+- **Arrow Keys**: Navigate character/speed selection
 - **Spacebar**: Jump / Start game / Restart
-- **Enter**: Confirm character selection
+- **Enter**: Confirm selection
 - **C**: Return to character selection (from Game Over screen)
+
+#### Mobile (Touch)
+- **Tap/Swipe Left-Right**: Navigate character selection
+- **Tap/Swipe Up-Down**: Navigate speed selection
+- **Tap Center**: Confirm selection and start
+- **Tap Anywhere**: Jump during gameplay
+- **Tap Upper Area**: Restart game (on Game Over)
+- **Tap Lower Area**: Return to menu (on Game Over)
+
+📱 *See [MOBILE_CONTROLS.md](MOBILE_CONTROLS.md) for detailed touch controls guide*
 
 ### Gameplay
 
@@ -122,16 +135,24 @@ COLORS: {
 
 ## Browser Compatibility
 
+### Desktop
 - Chrome 90+
 - Firefox 88+
 - Safari 14+
 - Edge 90+
+
+### Mobile
+- iOS Safari 14+
+- Chrome for Android
+- Firefox for Android
+- Samsung Internet
 
 Requires support for:
 - HTML5 Canvas
 - ES6 JavaScript
 - localStorage
 - CSS3
+- Touch Events API (for mobile)
 
 ## Development
 
@@ -161,9 +182,9 @@ See `PRD.md` for a full list of potential future features:
 - Power-ups (mushrooms, stars)
 - Multiple worlds/backgrounds
 - Sound effects and music
-- Mobile touch controls
 - Additional dog characters
 - Achievements system
+- Progressive Web App (PWA) support for offline play
 
 ## Credits
 
