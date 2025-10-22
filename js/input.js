@@ -14,22 +14,14 @@ class InputHandler {
         document.addEventListener('keydown', (e) => this.handleKeyDown(e));
         document.addEventListener('keyup', (e) => this.handleKeyUp(e));
 
-        // Bind touch event listeners
+        // Bind touch event listeners to document body (works anywhere on page)
         const canvas = document.getElementById('gameCanvas');
-        canvas.addEventListener('touchstart', (e) => this.handleTouchStart(e), { passive: false });
-        canvas.addEventListener('touchmove', (e) => this.handleTouchMove(e), { passive: false });
-        canvas.addEventListener('touchend', (e) => this.handleTouchEnd(e), { passive: false });
+        document.body.addEventListener('touchstart', (e) => this.handleTouchStart(e), { passive: false });
+        document.body.addEventListener('touchmove', (e) => this.handleTouchMove(e), { passive: false });
+        document.body.addEventListener('touchend', (e) => this.handleTouchEnd(e), { passive: false });
 
-        // Bind mouse click event listeners
-        canvas.addEventListener('click', (e) => this.handleClick(e));
-
-        // Also listen on document to catch taps outside canvas
-        document.addEventListener('touchstart', (e) => {
-            // Prevent default to avoid scrolling, zooming, etc.
-            if (e.target === canvas || e.target === document.body) {
-                e.preventDefault();
-            }
-        }, { passive: false });
+        // Bind mouse click event listeners to document body (works anywhere on page)
+        document.body.addEventListener('click', (e) => this.handleClick(e));
     }
 
     handleKeyDown(event) {

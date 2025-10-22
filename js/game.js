@@ -388,11 +388,19 @@ class Game {
     selectPreviousCharacter() {
         this.selectedCharacterIndex = (this.selectedCharacterIndex - 1 + this.dogSprites.length) % this.dogSprites.length;
         Storage.saveSelectedCharacter(this.selectedCharacterIndex);
+        // Immediately update the character sprite so it shows in game
+        if (this.character) {
+            this.character.sprite = this.dogSprites[this.selectedCharacterIndex];
+        }
     }
 
     selectNextCharacter() {
         this.selectedCharacterIndex = (this.selectedCharacterIndex + 1) % this.dogSprites.length;
         Storage.saveSelectedCharacter(this.selectedCharacterIndex);
+        // Immediately update the character sprite so it shows in game
+        if (this.character) {
+            this.character.sprite = this.dogSprites[this.selectedCharacterIndex];
+        }
     }
 
     selectPreviousSpeed() {
