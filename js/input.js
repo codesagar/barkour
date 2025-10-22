@@ -198,15 +198,22 @@ class InputHandler {
                 this.game.selectPreviousSpeed();
             }
         } else if (isTap) {
-            // Tap on top/bottom to navigate, center to select
-            if (relativeY < canvasHeight * 0.33) {
-                this.game.selectPreviousSpeed();
-            } else if (relativeY > canvasHeight * 0.67) {
-                this.game.selectNextSpeed();
-            } else {
-                // Center tap to start game
-                this.game.startGame();
+            // Detect which button was clicked based on actual button positions
+            // Button positions from game.js renderSpeedSelection:
+            // startY = 280, spacing = 140, height = 100
+            const clickedButtonIndex = this.detectSpeedButton(relativeY, canvasHeight);
+
+            if (clickedButtonIndex !== -1) {
+                // Clicked on a button
+                if (clickedButtonIndex === this.game.selectedSpeedIndex) {
+                    // Clicking already-selected button starts the game
+                    this.game.startGame();
+                } else {
+                    // Clicking different button selects it
+                    this.game.selectedSpeedIndex = clickedButtonIndex;
+                }
             }
+            // If clicked outside buttons, do nothing
         }
     }
 
@@ -259,15 +266,20 @@ class InputHandler {
                 break;
 
             case 'SELECT_SPEED':
-                // Click on top/bottom to navigate, center to select
-                if (relativeY < canvasHeight * 0.33) {
-                    this.game.selectPreviousSpeed();
-                } else if (relativeY > canvasHeight * 0.67) {
-                    this.game.selectNextSpeed();
-                } else {
-                    // Center click to start game
-                    this.game.startGame();
+                // Detect which button was clicked based on actual button positions
+                const clickedButtonIndex = this.detectSpeedButton(relativeY, canvasHeight);
+
+                if (clickedButtonIndex !== -1) {
+                    // Clicked on a button
+                    if (clickedButtonIndex === this.game.selectedSpeedIndex) {
+                        // Clicking already-selected button starts the game
+                        this.game.startGame();
+                    } else {
+                        // Clicking different button selects it
+                        this.game.selectedSpeedIndex = clickedButtonIndex;
+                    }
                 }
+                // If clicked outside buttons, do nothing
                 break;
 
             case 'PLAYING':
@@ -284,5 +296,30 @@ class InputHandler {
                 }
                 break;
         }
+    }
+
+    // Helper method to detect which speed button was clicked
+    // Returns button index (0=EASY, 1=MEDIUM, 2=HARD) or -1 if no button clicked
+    detectSpeedButton(relativeY, canvasHeight) {
+        // These values must match game.js renderSpeedSelection()
+        const startY = 280;        // First button center Y
+        const spacing = 140;       // Spacing between buttons
+        const buttonHeight = 100;  // Height of each button
+
+        // Scale from screen coordinates to canvas coordinates
+        const canvasY = (relativeY / canvasHeight) * 800; // 800 is CANVAS_HEIGHT
+
+        // Check each button (EASY, MEDIUM, HARD)
+        for (let i = 0; i < 3; i++) {
+            const buttonCenterY = startY + (i * spacing);
+            const buttonTop = buttonCenterY - (buttonHeight / 2);
+            const buttonBottom = buttonCenterY + (buttonHeight / 2);
+
+            if (canvasY >= buttonTop && canvasY <= buttonBottom) {
+                return i; // Found the clicked button
+            }
+        }
+
+        return -1; // No button was clicked
     }
 }

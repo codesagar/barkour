@@ -187,6 +187,9 @@ class Game {
                 this.renderGameOver();
                 break;
         }
+
+        // Always render version on top right (visible in all states)
+        this.renderVersion();
     }
 
     renderLoading() {
@@ -222,8 +225,8 @@ class Game {
 
         // Instructions (scaled up for larger canvas)
         this.ctx.font = '20px "Press Start 2P"';
-        this.ctx.fillText('USE ARROW KEYS TO SELECT', this.canvas.width / 2, 700);
-        this.ctx.fillText('PRESS SPACE TO CONTINUE', this.canvas.width / 2, 750);
+        this.ctx.fillText('ARROW KEYS / CLICK / TAP TO SELECT', this.canvas.width / 2, 700);
+        this.ctx.fillText('SPACE / CLICK / TAP TO CONTINUE', this.canvas.width / 2, 750);
 
         this.ctx.textAlign = 'left'; // Reset alignment
     }
@@ -250,8 +253,8 @@ class Game {
 
         // Instructions (scaled up for larger canvas)
         this.ctx.font = '20px "Press Start 2P"';
-        this.ctx.fillText('USE ARROW KEYS TO SELECT', this.canvas.width / 2, 700);
-        this.ctx.fillText('PRESS SPACE TO START', this.canvas.width / 2, 750);
+        this.ctx.fillText('ARROW KEYS / CLICK / TAP TO SELECT', this.canvas.width / 2, 700);
+        this.ctx.fillText('SPACE / DOUBLE-CLICK / TAP TO START', this.canvas.width / 2, 750);
 
         this.ctx.textAlign = 'left'; // Reset alignment
     }
@@ -282,6 +285,20 @@ class Game {
         this.ctx.font = '40px "Press Start 2P"';
         this.ctx.textAlign = 'center';
         this.ctx.fillText(speedName, x, y + 16);
+    }
+
+    renderVersion() {
+        // Save context state
+        this.ctx.save();
+
+        // Version display in top right corner
+        this.ctx.fillStyle = CONSTANTS.COLORS.BLACK;
+        this.ctx.font = '16px "Press Start 2P"';
+        this.ctx.textAlign = 'right';
+        this.ctx.fillText(CONSTANTS.VERSION, this.canvas.width - 20, 30);
+
+        // Restore context state
+        this.ctx.restore();
     }
 
     drawDogOption(sprite, name, x, y, selected) {
@@ -350,8 +367,8 @@ class Game {
 
         // Instructions (doubled font sizes)
         this.ctx.font = '20px "Press Start 2P"';
-        this.ctx.fillText('PRESS SPACE TO RESTART', this.canvas.width / 2, 500);
-        this.ctx.fillText('PRESS C TO CHANGE CHARACTER', this.canvas.width / 2, 550);
+        this.ctx.fillText('SPACE / CLICK TOP TO RESTART', this.canvas.width / 2, 500);
+        this.ctx.fillText('C / CLICK BOTTOM TO CHANGE CHARACTER', this.canvas.width / 2, 550);
 
         this.ctx.textAlign = 'left'; // Reset alignment
     }
