@@ -25,6 +25,11 @@ class InputHandler {
     }
 
     handleKeyDown(event) {
+        // Ignore keypresses when user is typing in an input field or textarea
+        if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
+            return;
+        }
+
         // Prevent default for game controls
         if (['Space', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Enter', 'KeyC'].includes(event.code)) {
             event.preventDefault();
