@@ -168,6 +168,13 @@ body {
 
 .leaderboard-btn {
     background: #28a745;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    padding: 12px 20px;
 }
 
 .logout-btn:hover {
@@ -494,9 +501,16 @@ body {
         gap: 5px;
     }
 
-    .logout-btn, .leaderboard-btn {
+    .logout-btn {
         font-size: 6px;
         padding: 6px 10px;
+    }
+
+    .leaderboard-btn {
+        top: 10px;
+        right: 10px;
+        font-size: 8px;
+        padding: 10px 15px;
     }
 
     .login-prompt {
