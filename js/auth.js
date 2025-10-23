@@ -119,7 +119,7 @@ class AuthManager {
                         username: this.currentProfile.username,
                         score: Math.floor(score),
                         difficulty: difficulty,
-                        character: characterName
+                        character_name: characterName
                     }
                 ])
                 .select();
@@ -138,7 +138,7 @@ class AuthManager {
         try {
             let query = this.supabase
                 .from('scores')
-                .select('username, score, difficulty, character, created_at')
+                .select('username, score, difficulty, character_name, created_at')
                 .order('score', { ascending: false })
                 .limit(limit);
 
@@ -166,7 +166,7 @@ class AuthManager {
         try {
             let query = this.supabase
                 .from('scores')
-                .select('score, difficulty, character, created_at')
+                .select('score, difficulty, character_name, created_at')
                 .eq('user_id', this.currentUser.id)
                 .order('score', { ascending: false })
                 .limit(1);
@@ -195,7 +195,7 @@ class AuthManager {
         try {
             const { data, error } = await this.supabase
                 .from('scores')
-                .select('score, difficulty, character, created_at')
+                .select('score, difficulty, character_name, created_at')
                 .eq('user_id', this.currentUser.id)
                 .order('created_at', { ascending: false })
                 .limit(limit);

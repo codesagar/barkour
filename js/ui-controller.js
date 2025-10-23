@@ -252,7 +252,7 @@ class UIController {
             const pbResult = await authManager.getPersonalBest(difficultyFilter);
             if (pbResult.success && pbResult.data) {
                 this.personalBest.classList.remove('hidden');
-                this.personalBestScore.textContent = `Score: ${pbResult.data.score} | ${pbResult.data.difficulty} | ${pbResult.data.character}`;
+                this.personalBestScore.textContent = `Score: ${pbResult.data.score} | ${pbResult.data.difficulty} | ${pbResult.data.character_name}`;
             } else {
                 this.personalBest.classList.add('hidden');
             }
@@ -280,7 +280,7 @@ class UIController {
                 <div class="leaderboard-rank">#${rank}</div>
                 <div class="leaderboard-info">
                     <div class="leaderboard-username">${entry.username}</div>
-                    <div class="leaderboard-details">${entry.difficulty} · ${entry.character}</div>
+                    <div class="leaderboard-details">${entry.difficulty} · ${entry.character_name}</div>
                 </div>
                 <div class="leaderboard-score">${entry.score}</div>
             `;

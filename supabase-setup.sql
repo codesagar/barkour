@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS public.scores (
     username TEXT NOT NULL,
     score INTEGER NOT NULL,
     difficulty TEXT NOT NULL CHECK (difficulty IN ('EASY', 'MEDIUM', 'HARD')),
-    character TEXT NOT NULL,
+    character_name TEXT NOT NULL,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
@@ -91,7 +91,7 @@ RETURNS TABLE (
     username TEXT,
     score INTEGER,
     difficulty TEXT,
-    character TEXT,
+    character_name TEXT,
     created_at TIMESTAMP WITH TIME ZONE
 ) AS $$
 BEGIN
@@ -100,7 +100,7 @@ BEGIN
         s.username,
         s.score,
         s.difficulty,
-        s.character,
+        s.character_name,
         s.created_at
     FROM public.scores s
     WHERE difficulty_filter IS NULL OR s.difficulty = difficulty_filter
@@ -114,7 +114,7 @@ CREATE OR REPLACE FUNCTION get_personal_best(user_uuid UUID, difficulty_filter T
 RETURNS TABLE (
     score INTEGER,
     difficulty TEXT,
-    character TEXT,
+    character_name TEXT,
     created_at TIMESTAMP WITH TIME ZONE
 ) AS $$
 BEGIN
@@ -122,7 +122,7 @@ BEGIN
     SELECT
         s.score,
         s.difficulty,
-        s.character,
+        s.character_name,
         s.created_at
     FROM public.scores s
     WHERE s.user_id = user_uuid
