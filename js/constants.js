@@ -4,7 +4,7 @@
 
 const CONSTANTS = {
     // Version
-    VERSION: 'v1.2.0',
+    VERSION: 'v2.0.0',
     // Canvas dimensions
     CANVAS_WIDTH: CONFIG.CANVAS.WIDTH,
     CANVAS_HEIGHT: CONFIG.CANVAS.HEIGHT,

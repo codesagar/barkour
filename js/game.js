@@ -445,11 +445,18 @@ class Game {
         this.state = 'PLAYING';
     }
 
-    gameOver() {
+    async gameOver() {
         // Update high score
         if (Math.floor(this.score) > this.highScore) {
             this.highScore = Math.floor(this.score);
             Storage.saveHighScore(this.highScore);
+        }
+
+        // Save score to Supabase if user is logged in
+        if (authManager.isLoggedIn()) {
+            const difficulty = this.speedOptions[this.selectedSpeedIndex];
+            const characterName = this.dogNames[this.selectedCharacterIndex];
+            await authManager.saveScore(this.score, difficulty, characterName);
         }
 
         this.state = 'GAME_OVER';
