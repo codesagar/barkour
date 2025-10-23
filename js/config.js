@@ -65,9 +65,9 @@ const CONFIG = {
         GRAVITY: 0.4,              // Pixels/frame² added to fall speed (0.2 = floaty, 0.5 = heavy)
                                    // Effect: Controls how quickly character falls after jumping
 
-        JUMP_VELOCITY: -15,        // Initial upward velocity in pixels/frame (more negative = higher)
-                                   // Effect: -15 with gravity 0.3 = ~375px height, ~2 seconds air time
-                                   // Try: -12 (lower jump), -18 (higher jump)
+        JUMP_VELOCITY: -17,        // Initial upward velocity in pixels/frame (more negative = higher)
+                                   // Effect: -17 with gravity 0.4 = ~450px height, ~2.1 seconds air time
+                                   // Increased from -15 to make game easier
 
         MAX_FALL_SPEED: 15         // Maximum downward velocity (prevents infinite acceleration)
                                    // Effect: Terminal velocity when falling
