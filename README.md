@@ -1,209 +1,85 @@
-# Barkour Game
+# Barkour — The Great Pawventure
 
-A browser-based endless runner game inspired by Chrome's T-Rex game, featuring custom dog characters and a Mario-themed aesthetic.
+A local, one-button dog adventure with five open trails, Buddy and Neet, forgiving Explorer play, and finish-photo keepsakes. Made primarily for iPad and desktop. No build step, account, unlocks or currency.
 
-## Features
+## Play locally
 
-- **Character Selection**: Choose between two playable dog characters
-- **T-Rex Game Mechanics**: Authentic jump physics and difficulty progression
-- **Mario-Inspired Theme**: Classic pixel art style with Mario color palette
-- **High Score Tracking**: Persistent high scores using localStorage
-- **Responsive Controls**: Keyboard and touch controls for desktop and mobile
-- **Mobile Optimized**: Full touch support with swipe and tap gestures
-- **Cross-Platform**: Works on desktop browsers and mobile devices
-
-## How to Play
-
-### Running the Game
-
-1. Open `index.html` in a modern web browser (Chrome, Firefox, Safari, or Edge)
-2. The game will load automatically
-
-### Controls
-
-#### Desktop (Keyboard)
-- **Arrow Keys**: Navigate character/speed selection
-- **Spacebar**: Jump / Start game / Restart
-- **Enter**: Confirm selection
-- **C**: Return to character selection (from Game Over screen)
-
-#### Desktop (Mouse)
-- **Click Left/Right Side**: Navigate character selection
-- **Click Top/Bottom**: Navigate speed selection
-- **Click Center**: Confirm selection and start
-- **Click Anywhere**: Jump during gameplay
-- **Click Upper Area**: Restart game (on Game Over)
-- **Click Lower Area**: Return to menu (on Game Over)
-
-#### Mobile (Touch)
-- **Tap/Swipe Left-Right**: Navigate character selection
-- **Tap/Swipe Up-Down**: Navigate speed selection
-- **Tap Center**: Confirm selection and start
-- **Tap Anywhere**: Jump during gameplay
-- **Tap Upper Area**: Restart game (on Game Over)
-- **Tap Lower Area**: Return to menu (on Game Over)
-
-📱 *See [MOBILE_CONTROLS.md](MOBILE_CONTROLS.md) for detailed touch controls guide*
-
-### Gameplay
-
-1. **Select Your Dog**: Use arrow keys to choose between the two dog characters, then press Space to start
-2. **Jump Over Obstacles**: Press spacebar to jump over pipes and enemies
-3. **Survive as Long as Possible**: The game gets progressively faster
-4. **Beat Your High Score**: Try to beat your personal best!
-
-## Project Structure
-
-```
-barkour-claude/
-├── index.html              # Main HTML file
-├── css/
-│   └── style.css          # Game styling
-├── js/
-│   ├── game.js            # Main game loop and state management
-│   ├── character.js       # Dog character class
-│   ├── obstacle.js        # Obstacle classes (Pipe, Goomba)
-│   ├── background.js      # Background rendering (clouds, ground)
-│   ├── collision.js       # Collision detection logic
-│   ├── input.js           # Keyboard input handling
-│   ├── storage.js         # localStorage utilities
-│   └── constants.js       # Game constants and configuration
-├── assets/
-│   └── sprites/
-│       ├── dog1.svg       # Dog character 1 (PLACEHOLDER)
-│       ├── dog2.svg       # Dog character 2 (PLACEHOLDER)
-│       ├── pipe.svg       # Pipe obstacle
-│       ├── goomba.svg     # Goomba enemy
-│       └── cloud.svg      # Cloud decoration
-├── PRD.md                 # Product Requirements Document
-└── claude.md              # Implementation Guide
+```sh
+python3 -m http.server 8013
 ```
 
-## Customization
+Open [Barkour](http://127.0.0.1:8013/). The local-only server serves this repository. A conventional static server also works (`python3 -m http.server 8000`). All runtime assets are local; the preserved legacy account service is not loaded.
 
-### Replacing Dog Sprites
+## Controls
 
-The current dog sprites (`dog1.svg` and `dog2.svg`) are placeholders. To use your own dog images:
+- **Space, Up, or press the playfield:** one full leap. Holding neither changes the arc nor repeats. A deliberate press in the last 160 ms before landing can buffer the next leap.
+- **Escape / P / Pause:** pause or resume. Losing focus pauses and clears input.
+- **Options:** Explorer (bumps never end a run), Adventurer (three hearts), Trailblazer (two), sound and fewer effects. **M** toggles sound.
+- Timber ramps, powder lips and mushrooms launch grounded paws automatically. Jumping before one bypasses it.
+- Browser fullscreen is optional. Ordinary play already fills the viewport.
 
-1. Replace `assets/sprites/dog1.svg` with your first dog's 16x16 bitmap (PNG or SVG)
-2. Replace `assets/sprites/dog2.svg` with your second dog's 16x16 bitmap (PNG or SVG)
-3. Ensure the images have transparent backgrounds
-4. The game will automatically scale them to 32x32 for display
+All five trails are open and take roughly a minute. Results offer the next destination, Run again, Choose a trail and Save photo. Scores, stars and souvenirs live in optional Run details and records. Section practice is available after challenge failures and saves no result or photo.
 
-**Recommended format**: PNG with transparency, 16x16 pixels
+## Five places to explore
 
-### Adjusting Game Difficulty
+| Destination | Trail character |
+|---|---|
+| Texas Suntrail | Fences, rolling tumbleweeds, open sky and a timber ramp into a supported log route across the dry wash. Super Paws scatters a compact brush cluster. |
+| Alpine Dash | High powder launches, a snow-shelf gap, one snowball descending from a fixed mountain shoulder, and two spaced snowbanks that burst apart under Super Paws. |
+| Pacific Coast | Pausing and scuttling crabs, timber on the sand, optional high treats and a driftwood breakthrough. All water is scenery. |
+| Mosswood Trail | Mushroom rebounds, rooted branches with a real gap, optional acorn rewards and fallen timber. The floor beneath the branches remains clear. |
+| Ember Ridge | Quiet and solid crystal phases, visible basalt leaps and one powered crystal fracture. |
 
-Edit `js/constants.js` to modify game parameters:
+Missing Super Paws leaves ordinary-leap solutions. Optional high rewards are safe to miss. The last leap is the player's choice; there is no automatic photo launcher.
 
-```javascript
-// Make the game easier
-INITIAL_SPEED: 4,           // Default: 6
-SPEED_INCREMENT: 0.0005,    // Default: 0.001
+## Dogs, power and framing
 
-// Make jumps higher
-JUMP_VELOCITY: -12,         // Default: -10
+Both dogs use their original raster expressions and animation frames. Buddy retains his integrated pant; Neet has an alert closed muzzle. The rejected Canvas tongue overlay is removed. Original source sheets, manifests, pivots and equal gameplay bodies are preserved.
 
-// Space out obstacles more
-MIN_OBSTACLE_DISTANCE: 300, // Default: 200
-MAX_OBSTACLE_DISTANCE: 800, // Default: 600
-```
+Super Paws lasts six seconds with an eased 20% speed boost. Contact produces material-specific fragments and harmless aftermath. The dog stays visible and the camera stays steady. Reduced effects retain the essential contact response; the ring, timer and expiry cue also work without sound.
 
-### Changing Colors
+Camera scale, dog position and ground line remain fixed during play. Viewport changes recompute a uniform scale. The recovery view is modestly closer than the rejected build, with extra fixed headroom on the three high-launch trails. Portrait retains slower pacing and advance hazard warnings.
 
-Edit the color palette in `js/constants.js`:
+Each photo preserves the exact crossing frame and height. Its still composition fits airborne poses without cropping ears and exports a 1200×1000 PNG.
 
-```javascript
-COLORS: {
-    SKY_BLUE: '#5C94FC',
-    GROUND_BROWN: '#C84C0C',
-    PIPE_GREEN: '#00A800',
-    // ... etc
-}
-```
+## Local history
 
-## Game Mechanics
+Current results use version 4 and explicit Explorer/challenge rules. Texas, Alpine and Mosswood use `<track>-v3-recovery-3`; unchanged Coast and Ember retain recovery-2. Earlier elevation-1, dynamic-2, recovery-1 and recovery-2 geometry remains selectable for historical verification. Incompatible results never compare. Replacement first archives the old record; failed archive writes prevent replacement. Historical awards are not recomputed.
 
-### Physics
-- **Gravity**: 0.6 pixels/frame²
-- **Jump Velocity**: -10 pixels/frame
-- **Initial Speed**: 6 pixels/frame
-- **Max Speed**: 13 pixels/frame
-- **Speed Increase**: 0.001 pixels/frame
-
-### Obstacles
-- **Pipes**: Green pipes in various heights (40-80px)
-- **Goombas**: Walking mushroom enemies (16x16)
-- **Spawn Distance**: 200-600 pixels apart
-
-### Scoring
-- Score increases based on distance traveled
-- +0.5 points per frame
-- High score persists between sessions
-
-## Browser Compatibility
-
-### Desktop
-- Chrome 90+
-- Firefox 88+
-- Safari 14+
-- Edge 90+
-
-### Mobile
-- iOS Safari 14+
-- Chrome for Android
-- Firefox for Android
-- Samsung Internet
-
-Requires support for:
-- HTML5 Canvas
-- ES6 JavaScript
-- localStorage
-- CSS3
-- Touch Events API (for mobile)
+Changed-trail photos use the separate `barkour_finish_photos_v4_recovery_3` bucket; Coast and Ember retain their recovery-2 bucket. Earlier buckets and readers remain available in the album. Blocked storage still permits play and downloading the current photo.
 
 ## Development
 
-### Debug Mode
+### GitHub Pages
 
-To enable hitbox visualization, uncomment the debug lines in:
-- `js/character.js` (line ~66)
-- `js/obstacle.js` (line ~23)
+The game is published through GitHub Pages at [codesagar.github.io/barkour](https://codesagar.github.io/barkour/).
 
-This will show collision boxes in red/blue for easier debugging.
+`python3 scripts/package-pages.py` produces the game-only `build/pages/` artifact from the HTML dependencies and character sheets (about 2.29 MiB). It excludes review videos, source art, experiments and unused account scripts. The deployment workflow runs the test suite before packaging and deploying on pushes to `main`, or manual dispatch. Relative asset URLs support the `/barkour/` project path. Records and photos stay local to each browser origin; localhost progress does not automatically transfer to the hosted site.
 
-### Performance
+### Checks
 
-The game targets 60 FPS and uses:
-- `requestAnimationFrame` for smooth animations
-- Pixel-perfect rendering (no image smoothing)
-- Efficient canvas clearing and redrawing
-- Obstacle cleanup (removes off-screen objects)
+```sh
+node --test tests/*.test.cjs
+python3 scripts/version-assets.py
+git diff --check
+```
 
-## Known Issues
+Refresh content-hashed JS/CSS URLs after runtime edits. Canvas and deterministic 120 Hz simulation are retained. The Pages deployment publishes only the packaged static game; no backend or engine migration is required.
 
-- None currently! Report issues if you find any.
+| File | Responsibility |
+|---|---|
+| `js/tracks.js` | Historical and current manifests, moving collision geometry, branch support |
+| `js/game.js` | Fixed-step integration, collisions, effects and steady camera |
+| `js/character.js` | Equal-body physics, original sprite selection and local reactions |
+| `js/art.js`, `js/background.js` | Natural materials, contact fragments and scenery |
+| `js/game-ui.js`, `css/style.css` | Menus, overlays, results, records and album |
+| `js/storage.js`, `js/finish-photo.js` | Provenance, safe local history and exact-pose keepsakes |
+| `js/audio.js`, `js/input.js` | Bounded local sound and input ownership |
 
-## Future Enhancements
+Historical fixtures are preserved. The historical uplift suite explicitly selects its earlier dynamic layout; the current power test follows each trail's authored contact count instead of requiring the rejected identical pair. New `recovery-*.test.cjs` coverage checks current physics, history separation and photo framing. Original art remains under `new-assets/` and `assets/characters/`.
 
-See `PRD.md` for a full list of potential future features:
-- Power-ups (mushrooms, stars)
-- Multiple worlds/backgrounds
-- Sound effects and music
-- Additional dog characters
-- Achievements system
-- Progressive Web App (PWA) support for offline play
+## Verification and limits
 
-## Credits
+The release passed 147 automated tests covering both dogs, all five trails and difficulties, input ownership, traversal, timing and historical storage. The packaged game was also checked under a `/barkour/` URL prefix at desktop and tablet viewport sizes. Earlier normal-time recordings and independent reviews remain in the original development workspace under `evidence/`; large recordings and experiments are not part of this release checkout or the hosted game.
 
-- Inspired by Chrome's T-Rex game
-- Mario-themed aesthetic inspired by Nintendo's Super Mario Bros
-- Created for Sagar's dogs
-
-## License
-
-This is a personal project. Feel free to modify and customize for your own use!
-
----
-
-**Enjoy playing Barkour!**
+Browser viewport emulation does not establish physical iPad touch/audio/GPU behavior. Deterministic checks and recorded desktop runs do not prove human enjoyment or voluntary replay. Audible mix and screen-reader gameplay require hands-on evaluation.

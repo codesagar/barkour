@@ -2,29 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="mobile-web-app-capable" content="yes">
-    <title>Barkour - Dog Runner Game</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Barkour — Small paws. Big adventures.</title>
+    <link rel="stylesheet" href="css/style.css?v=160b839f3e7c">
 
-    <!-- Supabase Client -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- Adventure is entirely local; legacy account code is preserved but not loaded. -->
 </head>
 <body>
-    <div class="game-container">
-        <canvas id="gameCanvas"></canvas>
-
-        <!-- Loading Screen -->
-        <div id="loadingScreen" class="screen">
-            <h1>BARKOUR</h1>
-            <p>Loading...</p>
-        </div>
-    </div>
+    <main class="app-shell">
+        <header class="app-header">
+            <a class="brand" href="./" aria-label="Barkour home"><span class="brand-mark">b.</span><span>BARKOUR<small>THE GREAT PAWVENTURE</small></span></a>
+            <nav class="header-actions" aria-label="Game options">
+                <button id="pauseButton" class="quiet-button hidden">Pause</button>
+                <button id="fullscreenButton" class="quiet-button">Full screen</button>
+                <button id="optionsButton" class="quiet-button">Options</button>
+                <button id="recordsButton" class="quiet-button">Trail records</button>
+            </nav>
+        </header>
+        <section id="stage" class="game-container menu-open" aria-label="Barkour adventure">
+            <canvas id="gameCanvas" width="1600" height="800" tabindex="0" aria-label="Running course. Press Space, Up, or the playfield once for a full leap. Holding does not repeat. Escape to pause."></canvas>
+            <div id="loadingScreen" class="loading-screen"><span class="brand-mark">b.</span><p>Getting the trails ready…</p></div>
+            <section id="adventureMenu" class="adventure-menu hidden" aria-label="Choose your adventure">
+                <div class="menu-copy">
+                    <h1>Small paws.<br><em>Big adventures.</em></h1>
+                    <p class="menu-intro">Pick your dog and a trail. You’ll be home in about a minute.</p>
+                    <div id="dogChoices" class="dog-choices" role="group" aria-label="Choose your dog"></div>
+                    <button id="playButton" class="primary-button">Go <span aria-hidden="true">→</span></button>
+                    <div id="controlHint" class="menu-hint">Press once to leap</div>
+                </div>
+                <div class="destination-caption"><span id="destinationRegion"></span><h2 id="destinationName"></h2><p id="destinationTag"></p></div>
+                <div class="trail-picker"><div class="trail-picker-label"><span>Choose a trail</span><span>All five are open</span></div><div id="trackChoices" class="track-choices" role="group" aria-label="Choose course"></div></div>
+            </section>
+            <section id="gameHUD" class="game-hud hidden" aria-label="Course status">
+                <div class="hud-left"><span id="hudTrack" class="hud-track"></span><strong id="hudHearts"></strong></div>
+                <div class="hud-progress"><div><span id="hudSection">On the trail</span><strong id="hudPercent">0%</strong></div><div class="progress-track" role="progressbar" aria-label="Course progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressBar"><span id="progressFill"></span></div></div>
+                <div class="hud-right"><span id="hudTreats">0 treats</span></div>
+            </section>
+            <div id="hazardCue" class="hazard-cue hidden"><canvas id="hazardIcon" width="100" height="80" aria-hidden="true"></canvas><span id="hazardLabel"></span></div>
+            <div id="powerHUD" class="power-hud hidden" aria-label="Active powers"></div>
+            <div id="courseToast" class="course-toast hidden" role="status" aria-live="polite"></div>
+            <div id="countdown" class="countdown hidden" aria-live="polite"></div>
+            <div id="runHint" class="run-hint hidden" role="status" aria-live="polite">Press once for a full leap · no holding</div>
+            <section id="resultPanel" class="panel-overlay hidden" role="dialog" aria-modal="true" aria-label="Course results">
+                <div class="result-card"><div class="result-details" tabindex="0" aria-label="Run result"><section id="finishMemory" class="finish-memory hidden" aria-label="Your finish photo"><canvas id="finishPhotoCanvas" width="600" height="500" role="img"></canvas><p id="finishPhotoStatus"></p></section><div class="result-copy"><h2 id="resultTitle"></h2><p id="resultMessage"></p><details id="runDetails"><summary>Run details</summary><div id="resultStars" class="result-stars"></div><div id="resultStats" class="result-stats"></div><div id="starGoals" class="star-goals"></div></details></div></div><div class="result-actions"><button id="nextButton" class="primary-button">Next adventure →</button><button id="practiceButton" class="secondary-button hidden">Practice this part</button><button id="fullTrailButton" class="primary-button hidden">Start full trail</button><button id="retryButton" class="secondary-button">Run again</button><button id="downloadFinishPhoto" class="secondary-button">Save photo</button><button id="menuButton" class="text-button">Choose a trail</button></div></div>
+            </section>
+            <section id="optionsPanel" class="panel-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="optionsTitle"><div class="result-card options-card"><button id="closeOptionsButton" class="secondary-button">Back</button><h2 id="optionsTitle">Options</h2><fieldset><legend>Adventure style</legend><div id="difficultyChoices" class="difficulty-choices" role="group" aria-label="Choose adventure style"></div><p id="difficultyHelp">Explorer keeps the journey going after bumps.</p></fieldset><label class="setting-row"><span><strong>Fewer effects</strong><small>Quieter motion and celebration</small></span><input id="qualityToggle" type="checkbox"></label><button id="soundButton" class="setting-row setting-button" aria-pressed="true"><span><strong>Sound</strong><small id="soundStatus">On</small></span></button></div></section>
+            <section id="pausePanel" class="panel-overlay hidden" role="dialog" aria-modal="true" aria-label="Game paused"><div class="result-card"><div class="eyebrow">TAKE A BREATHER</div><h2>Good things<br>are worth a paws.</h2><p>Your adventure will be right here.</p><button id="resumeButton" class="primary-button">Back to the trail →</button><button id="pauseMenuButton" class="text-button">Choose another trail</button></div></section>
+            <section id="recordsPanel" class="panel-overlay hidden" role="dialog" aria-modal="true" aria-label="Trail records"><div class="result-card records-card"><button id="closeRecordsButton" class="secondary-button">Back to adventure</button><h2>Trail memories</h2><details id="finishAlbum"><summary id="finishAlbumSummary">Finish photo album</summary><p>Saved on this device. Download favorites to keep them.</p><div id="finishAlbumGrid"></div></details><div id="recordsList"></div><p class="muted">Earlier adventures stay separate because their rules or trails differ.</p></div></section>
+        </section>
+        <footer class="app-footer"><span><b>MADE FOR THE JOY OF THE RUN.</b> A little courage. A lot of treats.</span><span>Jump <kbd>Space</kbd> / <kbd>↑</kbd> &nbsp; Pause <kbd>Esc</kbd></span></footer>
+    </main>
 
     <!-- Auth Modal -->
     <div id="authModal" class="auth-modal hidden">
@@ -60,7 +90,7 @@
     <button id="loginPrompt" class="login-prompt hidden">Login</button>
 
     <!-- Leaderboard Button (always visible) -->
-    <button id="leaderboardBtn" class="leaderboard-btn">Leaderboard</button>
+    <button id="leaderboardBtn" class="leaderboard-btn hidden">Classic leaderboard</button>
 
     <!-- Leaderboard Modal -->
     <div id="leaderboardModal" class="leaderboard-modal hidden">
@@ -87,16 +117,20 @@
     </div>
 
     <!-- JavaScript Modules -->
-    <script src="js/config.js"></script>
-    <script src="js/constants.js"></script>
-    <script src="js/storage.js"></script>
-    <script src="js/auth.js"></script>
-    <script src="js/ui-controller.js"></script>
-    <script src="js/character.js"></script>
-    <script src="js/obstacle.js"></script>
-    <script src="js/background.js"></script>
-    <script src="js/collision.js"></script>
-    <script src="js/input.js"></script>
-    <script src="js/game.js"></script>
+    <script src="js/config.js?v=ea707db388a5"></script>
+    <script src="js/pet-manifest.js?v=48a627d1e51f"></script>
+    <script src="js/storage.js?v=9d3bf3d611b7"></script>
+
+    <script src="js/character-assets.js?v=4eb9d6b1587b"></script>
+    <script src="js/character.js?v=e026a62406ab"></script>
+    <script src="js/tracks.js?v=42e19a27d5f5"></script>
+    <script src="js/art.js?v=95c947f6f4b2"></script>
+    <script src="js/audio.js?v=c2392a5dd476"></script>
+    <script src="js/background.js?v=329663ff0a3e"></script>
+    <script src="js/collision.js?v=aadcec846ae3"></script>
+    <script src="js/input.js?v=6894339bc63d"></script>
+    <script src="js/finish-photo.js?v=91b70512f932"></script>
+    <script src="js/game-ui.js?v=914b59fcc49d"></script>
+    <script src="js/game.js?v=877a7efa7ef0"></script>
 </body>
 </html>

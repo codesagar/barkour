@@ -1,0 +1,253 @@
+{
+  "format": "barkour-buddy-1",
+  "character": "Buddy",
+  "facing": "right",
+  "coordinateSystem": "top-left, x right, y down",
+  "alpha": "straight / unpremultiplied",
+  "rendering": "linear texture filtering; no mipmaps on unpadded grid sheets",
+  "frameSize": {
+    "w": 512,
+    "h": 512
+  },
+  "pivot": {
+    "x": 256,
+    "y": 456
+  },
+  "recommendedDisplaySize": {
+    "w": 192,
+    "h": 192
+  },
+  "physics": {
+    "rootMotion": false,
+    "jumpArc": "engine-owned",
+    "suggestedBodyHitbox": {
+      "x": 150,
+      "y": 210,
+      "w": 220,
+      "h": 230
+    },
+    "hitboxNote": "Starting point only; tune against gameplay. Exclude ears and tail from obstacle collision."
+  },
+  "animations": {
+    "run": {
+      "sheet": "512/run.png",
+      "sheetWebp": "512/run.webp",
+      "sheet256": "256/run.png",
+      "columns": 4,
+      "rows": 3,
+      "frameCount": 12,
+      "durationsMs": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "loop": true,
+      "sourceFrameOrder": [
+        0,
+        11,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        7
+      ],
+      "frameFiles": [
+        "512/frames/run/run_00.png",
+        "512/frames/run/run_01.png",
+        "512/frames/run/run_02.png",
+        "512/frames/run/run_03.png",
+        "512/frames/run/run_04.png",
+        "512/frames/run/run_05.png",
+        "512/frames/run/run_06.png",
+        "512/frames/run/run_07.png",
+        "512/frames/run/run_08.png",
+        "512/frames/run/run_09.png",
+        "512/frames/run/run_10.png",
+        "512/frames/run/run_11.png"
+      ]
+    },
+    "jump": {
+      "sheet": "512/jump.png",
+      "sheetWebp": "512/jump.webp",
+      "sheet256": "256/jump.png",
+      "columns": 4,
+      "rows": 2,
+      "frameCount": 8,
+      "durationsMs": [
+        50,
+        60,
+        100,
+        120,
+        100,
+        50,
+        70,
+        70
+      ],
+      "loop": false,
+      "sourceFrameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "frameFiles": [
+        "512/frames/jump/jump_00.png",
+        "512/frames/jump/jump_01.png",
+        "512/frames/jump/jump_02.png",
+        "512/frames/jump/jump_03.png",
+        "512/frames/jump/jump_04.png",
+        "512/frames/jump/jump_05.png",
+        "512/frames/jump/jump_06.png",
+        "512/frames/jump/jump_07.png"
+      ]
+    },
+    "idle": {
+      "sheet": "512/idle.png",
+      "sheetWebp": "512/idle.webp",
+      "sheet256": "256/idle.png",
+      "columns": 3,
+      "rows": 2,
+      "frameCount": 6,
+      "durationsMs": [
+        800,
+        300,
+        90,
+        100,
+        130,
+        680
+      ],
+      "loop": true,
+      "sourceFrameOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "frameFiles": [
+        "512/frames/idle/idle_00.png",
+        "512/frames/idle/idle_01.png",
+        "512/frames/idle/idle_02.png",
+        "512/frames/idle/idle_03.png",
+        "512/frames/idle/idle_04.png",
+        "512/frames/idle/idle_05.png"
+      ]
+    }
+  },
+  "sources": {
+    "run": {
+      "size": [
+        1448,
+        1086
+      ],
+      "sha256": "194d1dc50e357ee4b9519e792fcc409613c77229765f36746b4b8a4ea47bed2b"
+    },
+    "jump": {
+      "size": [
+        1774,
+        887
+      ],
+      "sha256": "a30406892326922222b3a7adf0af9498d20474fe19e02f72cdfeae6ef3b36dae"
+    },
+    "idle": {
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "772674bd7c574c41883582f967efd5e5164292961fddea71c87f7c1f2861b569"
+    }
+  },
+  "states": {
+    "idle": {
+      "animation": "idle",
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "loop": true
+    },
+    "run": {
+      "animation": "run",
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "loop": true
+    },
+    "takeoff": {
+      "animation": "jump",
+      "frames": [
+        0,
+        1
+      ],
+      "loop": false
+    },
+    "rise": {
+      "animation": "jump",
+      "frames": [
+        2
+      ],
+      "loop": false,
+      "holdLast": true
+    },
+    "apex": {
+      "animation": "jump",
+      "frames": [
+        3
+      ],
+      "loop": false,
+      "holdLast": true
+    },
+    "fall": {
+      "animation": "jump",
+      "frames": [
+        4
+      ],
+      "loop": false,
+      "holdLast": true
+    },
+    "land": {
+      "animation": "jump",
+      "frames": [
+        5,
+        6,
+        7
+      ],
+      "loop": false,
+      "next": "run"
+    }
+  }
+}

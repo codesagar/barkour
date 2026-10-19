@@ -1,0 +1,872 @@
+{
+  "description": "Pre-Stage-A fixed full-leap production snapshots. Apex-timed ordinary leaps; no manual spring or pipe-gap input. Captured from pre-edit working-tree sources, not Git HEAD.",
+  "rows": [
+    {
+      "track": 0,
+      "speed": 0,
+      "dog": 0,
+      "layout": "texas-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 2176,
+      "time": 54.94999999999752,
+      "damage": 0,
+      "treats": 33,
+      "souvenirs": 0,
+      "stars": 3,
+      "sections": [
+        185,
+        178,
+        158,
+        122,
+        122,
+        183,
+        148,
+        120,
+        278,
+        678
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.4308333333333334
+      }
+    },
+    {
+      "track": 0,
+      "speed": 0,
+      "dog": 1,
+      "layout": "texas-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 2176,
+      "time": 54.94999999999752,
+      "damage": 0,
+      "treats": 33,
+      "souvenirs": 0,
+      "stars": 3,
+      "sections": [
+        185,
+        178,
+        158,
+        122,
+        122,
+        183,
+        148,
+        120,
+        278,
+        678
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.4308333333333334
+      }
+    },
+    {
+      "track": 0,
+      "speed": 1,
+      "dog": 0,
+      "layout": "texas-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 2306,
+      "time": 54.8166666666642,
+      "damage": 0,
+      "treats": 33,
+      "souvenirs": 0,
+      "stars": 3,
+      "sections": [
+        202,
+        188,
+        172,
+        129,
+        129,
+        193,
+        162,
+        133,
+        301,
+        692
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.4148437500000001
+      }
+    },
+    {
+      "track": 0,
+      "speed": 1,
+      "dog": 1,
+      "layout": "texas-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 2306,
+      "time": 54.8166666666642,
+      "damage": 0,
+      "treats": 33,
+      "souvenirs": 0,
+      "stars": 3,
+      "sections": [
+        202,
+        188,
+        172,
+        129,
+        129,
+        193,
+        162,
+        133,
+        301,
+        692
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.4148437500000001
+      }
+    },
+    {
+      "track": 0,
+      "speed": 2,
+      "dog": 0,
+      "layout": "texas-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 2436,
+      "time": 55.09166666666418,
+      "damage": 0,
+      "treats": 33,
+      "souvenirs": 0,
+      "stars": 3,
+      "sections": [
+        219,
+        199,
+        187,
+        135,
+        135,
+        204,
+        177,
+        145,
+        324,
+        707
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.4148437500000001
+      }
+    },
+    {
+      "track": 0,
+      "speed": 2,
+      "dog": 1,
+      "layout": "texas-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 2436,
+      "time": 55.09166666666418,
+      "damage": 0,
+      "treats": 33,
+      "souvenirs": 0,
+      "stars": 3,
+      "sections": [
+        219,
+        199,
+        187,
+        135,
+        135,
+        204,
+        177,
+        145,
+        324,
+        707
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.4148437500000001
+      }
+    },
+    {
+      "track": 1,
+      "speed": 0,
+      "dog": 0,
+      "layout": "alpine-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 1970,
+      "time": 53.24999999999762,
+      "damage": 0,
+      "treats": 24,
+      "souvenirs": 1,
+      "stars": 3,
+      "sections": [
+        393,
+        165,
+        158,
+        158,
+        130,
+        303,
+        660
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.42298177083333344
+      }
+    },
+    {
+      "track": 1,
+      "speed": 0,
+      "dog": 1,
+      "layout": "alpine-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 1970,
+      "time": 53.24999999999762,
+      "damage": 0,
+      "treats": 24,
+      "souvenirs": 1,
+      "stars": 3,
+      "sections": [
+        393,
+        165,
+        158,
+        158,
+        130,
+        303,
+        660
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.42298177083333344
+      }
+    },
+    {
+      "track": 1,
+      "speed": 1,
+      "dog": 0,
+      "layout": "alpine-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 2067,
+      "time": 53.0666666666643,
+      "damage": 0,
+      "treats": 22,
+      "souvenirs": 1,
+      "stars": 3,
+      "sections": [
+        401,
+        148,
+        187,
+        172,
+        147,
+        331,
+        677
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.4148437500000001
+      }
+    },
+    {
+      "track": 1,
+      "speed": 1,
+      "dog": 1,
+      "layout": "alpine-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 2067,
+      "time": 53.0666666666643,
+      "damage": 0,
+      "treats": 22,
+      "souvenirs": 1,
+      "stars": 3,
+      "sections": [
+        401,
+        148,
+        187,
+        172,
+        147,
+        331,
+        677
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.4148437500000001
+      }
+    },
+    {
+      "track": 1,
+      "speed": 2,
+      "dog": 0,
+      "layout": "alpine-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 2193,
+      "time": 53.31666666666428,
+      "damage": 0,
+      "treats": 22,
+      "souvenirs": 1,
+      "stars": 3,
+      "sections": [
+        424,
+        160,
+        202,
+        187,
+        164,
+        358,
+        694
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.4148437500000001
+      }
+    },
+    {
+      "track": 1,
+      "speed": 2,
+      "dog": 1,
+      "layout": "alpine-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 2193,
+      "time": 53.31666666666428,
+      "damage": 0,
+      "treats": 22,
+      "souvenirs": 1,
+      "stars": 3,
+      "sections": [
+        424,
+        160,
+        202,
+        187,
+        164,
+        358,
+        694
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.4148437500000001
+      }
+    },
+    {
+      "track": 2,
+      "speed": 0,
+      "dog": 0,
+      "layout": "coast-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 2110,
+      "time": 53.24166666666429,
+      "damage": 0,
+      "treats": 27,
+      "souvenirs": 1,
+      "stars": 3,
+      "sections": [
+        296,
+        165,
+        190,
+        133,
+        386,
+        291,
+        648
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.42298177083333344
+      }
+    },
+    {
+      "track": 2,
+      "speed": 0,
+      "dog": 1,
+      "layout": "coast-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 2110,
+      "time": 53.24166666666429,
+      "damage": 0,
+      "treats": 27,
+      "souvenirs": 1,
+      "stars": 3,
+      "sections": [
+        296,
+        165,
+        190,
+        133,
+        386,
+        291,
+        648
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.42298177083333344
+      }
+    },
+    {
+      "track": 2,
+      "speed": 1,
+      "dog": 0,
+      "layout": "coast-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 2192,
+      "time": 53.0666666666643,
+      "damage": 0,
+      "treats": 25,
+      "souvenirs": 1,
+      "stars": 3,
+      "sections": [
+        321,
+        163,
+        188,
+        132,
+        407,
+        316,
+        662
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.4148437500000001
+      }
+    },
+    {
+      "track": 2,
+      "speed": 1,
+      "dog": 1,
+      "layout": "coast-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 2192,
+      "time": 53.0666666666643,
+      "damage": 0,
+      "treats": 25,
+      "souvenirs": 1,
+      "stars": 3,
+      "sections": [
+        321,
+        163,
+        188,
+        132,
+        407,
+        316,
+        662
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.4148437500000001
+      }
+    },
+    {
+      "track": 2,
+      "speed": 2,
+      "dog": 0,
+      "layout": "coast-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 2288,
+      "time": 53.31666666666428,
+      "damage": 0,
+      "treats": 23,
+      "souvenirs": 1,
+      "stars": 3,
+      "sections": [
+        331,
+        160,
+        200,
+        147,
+        427,
+        341,
+        677
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.4148437500000001
+      }
+    },
+    {
+      "track": 2,
+      "speed": 2,
+      "dog": 1,
+      "layout": "coast-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 2288,
+      "time": 53.31666666666428,
+      "damage": 0,
+      "treats": 23,
+      "souvenirs": 1,
+      "stars": 3,
+      "sections": [
+        331,
+        160,
+        200,
+        147,
+        427,
+        341,
+        677
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.4148437500000001
+      }
+    },
+    {
+      "track": 3,
+      "speed": 0,
+      "dog": 0,
+      "layout": "forest-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 1985,
+      "time": 53.24166666666429,
+      "damage": 0,
+      "treats": 25,
+      "souvenirs": 1,
+      "stars": 3,
+      "sections": [
+        403,
+        163,
+        148,
+        200,
+        143,
+        278,
+        648
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.42298177083333344
+      }
+    },
+    {
+      "track": 3,
+      "speed": 0,
+      "dog": 1,
+      "layout": "forest-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 1985,
+      "time": 53.24166666666429,
+      "damage": 0,
+      "treats": 25,
+      "souvenirs": 1,
+      "stars": 3,
+      "sections": [
+        403,
+        163,
+        148,
+        200,
+        143,
+        278,
+        648
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.42298177083333344
+      }
+    },
+    {
+      "track": 3,
+      "speed": 1,
+      "dog": 0,
+      "layout": "forest-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 2082,
+      "time": 53.0666666666643,
+      "damage": 0,
+      "treats": 23,
+      "souvenirs": 1,
+      "stars": 3,
+      "sections": [
+        431,
+        177,
+        132,
+        202,
+        172,
+        301,
+        662
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.4148437500000001
+      }
+    },
+    {
+      "track": 3,
+      "speed": 1,
+      "dog": 1,
+      "layout": "forest-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 2082,
+      "time": 53.0666666666643,
+      "damage": 0,
+      "treats": 23,
+      "souvenirs": 1,
+      "stars": 3,
+      "sections": [
+        431,
+        177,
+        132,
+        202,
+        172,
+        301,
+        662
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.4148437500000001
+      }
+    },
+    {
+      "track": 3,
+      "speed": 2,
+      "dog": 0,
+      "layout": "forest-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 2208,
+      "time": 53.31666666666428,
+      "damage": 0,
+      "treats": 23,
+      "souvenirs": 1,
+      "stars": 3,
+      "sections": [
+        458,
+        192,
+        147,
+        219,
+        187,
+        324,
+        677
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.4148437500000001
+      }
+    },
+    {
+      "track": 3,
+      "speed": 2,
+      "dog": 1,
+      "layout": "forest-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 2208,
+      "time": 53.31666666666428,
+      "damage": 0,
+      "treats": 23,
+      "souvenirs": 1,
+      "stars": 3,
+      "sections": [
+        458,
+        192,
+        147,
+        219,
+        187,
+        324,
+        677
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.4148437500000001
+      }
+    },
+    {
+      "track": 4,
+      "speed": 0,
+      "dog": 0,
+      "layout": "ember-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 2080,
+      "time": 53.24166666666429,
+      "damage": 0,
+      "treats": 24,
+      "souvenirs": 1,
+      "stars": 3,
+      "sections": [
+        236,
+        205,
+        270,
+        163,
+        115,
+        441,
+        648
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.42298177083333344
+      }
+    },
+    {
+      "track": 4,
+      "speed": 0,
+      "dog": 1,
+      "layout": "ember-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 2080,
+      "time": 53.24166666666429,
+      "damage": 0,
+      "treats": 24,
+      "souvenirs": 1,
+      "stars": 3,
+      "sections": [
+        236,
+        205,
+        270,
+        163,
+        115,
+        441,
+        648
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.42298177083333344
+      }
+    },
+    {
+      "track": 4,
+      "speed": 1,
+      "dog": 0,
+      "layout": "ember-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 2207,
+      "time": 53.0666666666643,
+      "damage": 0,
+      "treats": 24,
+      "souvenirs": 1,
+      "stars": 3,
+      "sections": [
+        261,
+        218,
+        287,
+        178,
+        132,
+        466,
+        662
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.4148437500000001
+      }
+    },
+    {
+      "track": 4,
+      "speed": 1,
+      "dog": 1,
+      "layout": "ember-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 2207,
+      "time": 53.0666666666643,
+      "damage": 0,
+      "treats": 24,
+      "souvenirs": 1,
+      "stars": 3,
+      "sections": [
+        261,
+        218,
+        287,
+        178,
+        132,
+        466,
+        662
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.4148437500000001
+      }
+    },
+    {
+      "track": 4,
+      "speed": 2,
+      "dog": 0,
+      "layout": "ember-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 2333,
+      "time": 53.31666666666428,
+      "damage": 0,
+      "treats": 24,
+      "souvenirs": 1,
+      "stars": 3,
+      "sections": [
+        286,
+        230,
+        304,
+        192,
+        149,
+        491,
+        677
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.4148437500000001
+      }
+    },
+    {
+      "track": 4,
+      "speed": 2,
+      "dog": 1,
+      "layout": "ember-v3-elevation-1",
+      "capability": "equal-pet-v1",
+      "score": 2333,
+      "time": 53.31666666666428,
+      "damage": 0,
+      "treats": 24,
+      "souvenirs": 1,
+      "stars": 3,
+      "sections": [
+        286,
+        230,
+        304,
+        192,
+        149,
+        491,
+        677
+      ],
+      "pose": {
+        "state": "fall",
+        "clip": "jump",
+        "frame": 4,
+        "normalizedHeight": 0.4148437500000001
+      }
+    }
+  ],
+  "preStageASha256": {
+    "game.js": "5d32221c2aead5eb054018994732d939e17f6146379a71a25826937176cc3f36",
+    "character.js": "169a41ae963e726d847fb8eedecc0f31dd8a7cc779d312dc23d81fb1819e32fb",
+    "config.js": "ea707db388a51a40bbe9e2a884661f422b8afd4c601aa8743552a4275229c2ae",
+    "tracks.js": "bed7b8701a83c519b0e95ffecb1de033dd1c9cd2f6fa8f15dfbb065e4b1f7ef3",
+    "input.js": "8eca2a3193b5515bc6e2e7fb5dd5e014adec51e980a788e3b42ce3fcea1904f1",
+    "storage.js": "599aeaf23c2a0a511d510b8090732af6d77ab0d18b26d2b627de67e2a17a262a",
+    "finish-photo.js": "eceafb341aa6616300a99be819b48c68876d30244913f0c0e895822fbdcfd24e"
+  }
+}
